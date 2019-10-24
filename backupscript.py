@@ -29,7 +29,7 @@ def pull_data(options):
     # args = '-av -e "ssh -i /home/sysadmin/.ssh/id_rsa" root@192.168.43.136:~/hey.txt $(pwd)'
     #print(options)
     args = '-av -m --include="*.tar.gz" --include="*/" --exclude="*" --exclude ".*/" -e "ssh -i '+options.rsa+'" '+options.user+'@'+options.address+':'+options.origin+' '+options.to
-    print(args)
+    #print(args)
     exec_bash = Popen('rsync ' + args, shell=True,stdout=PIPE, stdin=PIPE, stderr=PIPE)
     while True:
         o = exec_bash.stdout.readline()
